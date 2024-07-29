@@ -24,4 +24,4 @@ Run application:
 mvn clean spring-boot:run
 ```
 
-{Instructions]()
+[Instructions](https://medium.com/@yangli136/apache-drools-with-spring-boot-3-84a0b2735ed0)
