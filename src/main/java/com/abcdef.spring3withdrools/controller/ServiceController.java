@@ -15,7 +15,7 @@ import com.abcdef.springboot3withdrools.model.loan.Rate;
 import com.abcdef.springboot3withdrools.model.order.OrderDiscount;
 import com.abcdef.springboot3withdrools.model.order.OrderRequest;
 import com.abcdef.springboot3withdrools.service.greeting.GreetingStringValidationService;
-import com.abcdef.springboot3withdrools.service.loan.LoadRateService;
+import com.abcdef.springboot3withdrools.service.loan.LoanRateService;
 import com.abcdef.springboot3withdrools.service.order.OrderDiscountService;
 
 import lombok.RequiredArgsConstructor;
@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ServiceController {
 
-    private final LoadRateService loadRateService;
+    private final LoanRateService loanRateService;
     private final OrderDiscountService orderDiscountService;
     private final GreetingStringValidationService greetingStringValidationService;
 
@@ -36,7 +36,7 @@ public class ServiceController {
      */
     @PostMapping("/get-rate")
     public ResponseEntity<Rate> getRate(@RequestBody LoanApplicant request) {
-        final Rate rate = loadRateService.getRate(request);
+        final Rate rate = loanRateService.getRate(request);
         return new ResponseEntity<>(rate, HttpStatus.OK);
     }
 
