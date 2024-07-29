@@ -11,6 +11,11 @@ It covers three Drools rules definitions.
 * Spring Boot: 3.3.2
 * Apache Drools: 8.44.2.Final
 
+### Java and Mavne
+this application is built with
+* Java 21
+* Maven 3.9.3+
+
 ### Instructions
 
 Run application:
