@@ -1,6 +1,6 @@
 # springboot3withdrools
 
-A demo application that integrated Spring Boot and Apache Drools.
+A demo application that integrates Spring Boot and Apache Drools.
 It covers three Drools rules definitions.
 <br/><br/>
 1. rules in drl format
