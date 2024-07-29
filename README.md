@@ -13,7 +13,7 @@ It covers three Drools rules definitions.
 
 ### Java and Mavne
 this application is built with
-* Java 21
+* Java 17+
 * Maven 3.9.3+
 
 ### Instructions
