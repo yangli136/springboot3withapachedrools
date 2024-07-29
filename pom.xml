@@ -9,7 +9,7 @@
         <version>3.3.2</version>
     </parent>
 
-    <groupId>com.iddsoft</groupId>
+    <groupId>com.abcdef</groupId>
     <artifactId>springboot3withdrools</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringBoot3WIthDrools</name>
