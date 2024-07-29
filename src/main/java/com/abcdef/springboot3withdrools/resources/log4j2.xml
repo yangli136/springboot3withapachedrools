@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+
+    <Properties>
+        <Property name="text.log.pattern">%d{yyyy-MM-HH:mm:ss.SSS} [%t] -
+            CORRELATION_ID=%X{CORRELATION_ID}, %highlight{%level}{FATAL=bg_red,
+            ERROR=red, WARN=yellow, INFO=green, DEBUG=blue} %c{3} - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${text.log.pattern}" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info" additivity="false">
+            <AppenderRef ref="console" />
+        </Root>
+    </Loggers>
+
+</Configuration>

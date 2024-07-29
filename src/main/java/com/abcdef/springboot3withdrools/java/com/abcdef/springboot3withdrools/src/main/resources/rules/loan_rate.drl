@@ -1,0 +1,52 @@
+import com.abcdef.springboot3withdrools.model.loan.LoanApplicant;
+global com.abcdef.springboot3withdrools.model.loan.Rate rate;
+
+dialect "mvel"
+
+rule "Checking Existing Debt Against Loan Amount"
+ when 
+  LoanApplicant(loanAmount > (2 * existingDebt))
+ then
+  rate.setLoanStatus("Rejected - Too Much Debt");
+  rate.setLoanRate(999);
+end
+
+rule "Checking Annual Salary is greater than 50000 v0.0.1"
+ when
+  LoanApplicant(annualSalary <= 50000)
+ then
+  rate.setLoanStatus("Rejected - Too low salary");
+  rate.setLoanRate(999);
+end
+
+rule "Checking Credit Score less than 550 v0.0.1"
+ when
+  LoanApplicant(creditScore < 550 , annualSalary > 50000,  loanAmount < (2 * existingDebt))
+ then
+  rate.setLoanStatus("Rejected");
+  rate.setLoanRate(999);
+end
+
+rule "Checking Credit Score less than 650 v0.0.1"
+ when
+  LoanApplicant((creditScore < 650 && creditScore >= 550), annualSalary > 50000,  loanAmount < (2 * existingDebt))
+ then
+  rate.setLoanStatus("Approved");
+  rate.setLoanRate(7.25);
+end
+
+rule "Checking Credit Score less than 750 v0.0.1"
+ when
+  LoanApplicant((creditScore < 750 && creditScore >= 650), annualSalary > 50000,  loanAmount < (2 * existingDebt))
+ then
+  rate.setLoanStatus("Approved");
+  rate.setLoanRate(6.25);
+end
+
+rule "Checking Credit Score greater than 750 v0.0.1"
+ when
+  LoanApplicant(creditScore >= 750, annualSalary > 50000,  loanAmount < (2 * existingDebt))
+ then
+  rate.setLoanStatus("Approved");
+  rate.setLoanRate(5.25);
+end
