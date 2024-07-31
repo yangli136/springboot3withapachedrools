@@ -1,0 +1,31 @@
+package com.abcdef.springboot3withdrools.ruleunit.greeting;
+unit GreetingUnit;
+
+rule isHelloWorld
+when
+    /strings[ this == "Hello World" ]
+then
+    results.add("it worked!");
+end
+
+rule lengthGreaterThan_5
+when
+    $s : /strings[ length > 5 ]
+then
+    results.add("it also worked with " + $s.toUpperCase());
+end
+
+rule lengthLessThan_5
+when
+    $s : /strings[ length < 5 ]
+then
+    results.add("this shouldn't fire");
+end
+
+rule isLengthMatched
+when
+    $s: /strings[ length > 5 ]
+    $i: /ints[ this > 5, this == $s.length ]
+then
+    results.add("String '" + $s + "' is " + $i + " characters long");
+end
