@@ -42,6 +42,10 @@ public class OrderUnitTest {
         // Files end with drl.xls and drl.xlsx will be automatically loaded from package the same as RuleUnit.
         // Apache POI is used to load Excel file, POI-HSSF supports Excel '97(-2007) file format.
         // PON-XSSF/SXSSF supports Excel 2007 OOXML (.xlsx).
+
+        // You should typically write only one spreadsheet of decision tables, containing all necessary RuleTable definitions, per rule package. 
+        // You can write separate decision table spreadsheets for separate packages, but writing multiple spreadsheets in the same package can 
+        // cause compilation errors from conflicting RuleSet or RuleTable attributes and is therefore not recommended.
         try (RuleUnitInstance<OrderUnit> unitInstance = RuleUnitProvider.get().createRuleUnitInstance(unit,
                 ruleConfig)) {
             assertThat(unitInstance.fire()).isEqualTo(2);
