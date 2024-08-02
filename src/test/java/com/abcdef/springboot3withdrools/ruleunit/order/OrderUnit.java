@@ -27,7 +27,3 @@ public class OrderUnit implements RuleUnitData {
         return orderDiscount;
     }
 }
-
-// You should typically write only one spreadsheet of decision tables, containing all necessary RuleTable definitions, per rule package. 
-// You can write separate decision table spreadsheets for separate packages, but writing multiple spreadsheets in the same package can 
-// cause compilation errors from conflicting RuleSet or RuleTable attributes and is therefore not recommended.
