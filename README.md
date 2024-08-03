@@ -1,3 +1,10 @@
+> README.md
+
+## License
+
+Any contributions made under this project will be governed by the
+[Apache License 2.0](https://opensource.aexp.com/LICENSE.txt).
+
 # springboot3withdrools
 
 A demo application that integrates Spring Boot and Apache Drools.
